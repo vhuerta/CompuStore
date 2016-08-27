@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+    ErrorDocument 404 /404.php
+    Options +FollowSymLinks
+    Options -Indexes
+    DirectoryIndex index.php
+    RewriteEngine on
+    RewriteCond $1 !^(index\.php|images|trac|svn)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /404.php
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
