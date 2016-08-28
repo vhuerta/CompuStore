@@ -2,6 +2,10 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Clase Auth, contiene los metodos para realizar la autentificacion y obtener un token,
+ * asi como refrescar el token para obtener uno nuevo.
+ */
 class Auth extends Custom_Controller {
 
     public function __construct() {
