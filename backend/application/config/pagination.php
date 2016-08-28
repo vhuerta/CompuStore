@@ -1,5 +1,5 @@
 <?php
 
 $config['pagination'] = array(
-    'limit' => '10'
+    'limit' => 10
 );

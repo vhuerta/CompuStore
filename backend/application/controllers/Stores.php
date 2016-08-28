@@ -15,6 +15,12 @@ class Stores extends Custom_Controller {
         $this->load->model('Stores_model', 'stores');
     }
 
+    /**
+     * Ruta para obtener las sucursales
+     *
+     * Mapea la siguiente ruta:
+     * 		GET http://example.com/stores
+     */
     public function index_get() {
         return $this->response($this->stores->findAll(), 200);
     }

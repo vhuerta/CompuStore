@@ -16,7 +16,7 @@ class Auth extends Custom_Controller {
     /**
      * Ruta para hacer autenticarse
      *
-     * Mapea la siguiente ruta:
+     * POST Mapea la siguiente ruta:
 	 * 		http://example.com/auth/token
      */
     public function token_post() {
@@ -34,6 +34,12 @@ class Auth extends Custom_Controller {
 
     }
 
+    /**
+     * Ruta para obtener un nuevo token
+     *
+     * POST Mapea la siguiente ruta:
+     * 		http://example.com/auth/token_refresh
+     */
     public function token_refresh_get() {
         $result = $this->auth->generate_token($this->current_user);
         return $this->response($result, $result->status === 'success'? 200 : 400);

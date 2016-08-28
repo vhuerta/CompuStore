@@ -3,7 +3,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Clase modelo que contiene los metodos para manipular y consultar las tiendas
+ * Clase modelo que contiene los metodos para manipular y consultar los productos
  * @author Victor Huerta <vhuertahnz@gmail.com>
  */
 class Stores_Model extends CI_model {

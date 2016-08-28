@@ -103,7 +103,7 @@ $autoload['helper'] = array();
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('public_routes');
+$autoload['config'] = array('public_routes', 'pagination');
 
 /*
 | -------------------------------------------------------------------
