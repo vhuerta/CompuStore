@@ -1,7 +1,10 @@
 /**
- * Storage Service
+ * Servicio para el almacenamiento
+ * 
+ * Guarda y recupera los valores indicados del storage configurado, 
+ * puede ser localStorage o sessionStorage
  *
- * @author Victor Huerta <victor@blackcore.com.mx>
+ * @author Victor Huerta <vhuertahnz@gmail.com>
  */
 
 export class StorageService {
