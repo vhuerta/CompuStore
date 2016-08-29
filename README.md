@@ -80,7 +80,11 @@ Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la apl
     ```
 3. Para verificar si ha funcionado se debe poder acceder a la ruta *http://localhost/compustore/api*
 
-Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la aplicación esta construida con Codeigniter y se utiliza un archivo .htaccess para hacer que las url's sean limpias, para referencia de como instalarlo ver este *[LINK](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04)*. Tambien se debe terner abilitada la opcion de FollowSymLinks en el host que se esta utilizando. La ruta sugerida para el API es *http://localhost/compustore/api* ya que el frontend trae un servidor de desarrollo el cual crea un proxy a esta ruta para poder alcanzar los endpoints. Si se desea modificar esta configuracion ver el archivo *[app/build/tasks/serve.js](https://github.com/vhuerta/CompuStore/blob/master/app/build/tasks/serve.js)* en esta linea:
+~~Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la aplicación esta construida con Codeigniter y se utiliza un archivo .htaccess para hacer que las url's sean limpias, para referencia de como instalarlo ver este *[LINK](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04)*. Tambien se debe terner abilitada la opcion de FollowSymLinks en el host que se esta utilizando. La ruta sugerida para el API es *http://localhost/compustore/api* ya que el frontend trae un servidor de desarrollo el cual crea un proxy a esta ruta para poder alcanzar los endpoints. Si se desea modificar esta configuracion ver el archivo~~
+
+Actualmente la aplicacion hace las peticiones a /api/index.php/ por lo que no es nesesario configurar el htaccess.
+
+*[app/build/tasks/serve.js](https://github.com/vhuerta/CompuStore/blob/master/app/build/tasks/serve.js)* en esta linea:
 
 ```javascript
 // PROXY PARA ENVIAR PETICIONES AL API QUE SE ENCUENTRA EN http://localhost:80/compustore/api
