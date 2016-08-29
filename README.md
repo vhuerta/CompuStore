@@ -29,7 +29,7 @@ Este es el diseño propuesto, incluye una tabla de usuarios y otra de tokens ya 
 
 ## Guia de instalación de la aplicación
 
-1. Descargar el archivo zip de *[AQUI]()*.
+1. Descargar el archivo zip de *[AQUI](https://github.com/vhuerta/CompuStore/releases/download/1.0.0/export.zip)*.
 2. Descomprimir en el DocumentRoot del servidor web (Apache) (normalmente /var/www).
 3. Nombrar la carpeta como se quiera, nombre sugerido *compustore*.
 4. Crear las base de datos importando este *[ARCHIVO SQL](https://github.com/vhuerta/CompuStore/blob/master/sql/compustore.sql)* preferentemente sobre una BD llamada compustore, aunque esto puede ser configurado en el siguiente paso.
