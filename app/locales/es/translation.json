@@ -1,0 +1,25 @@
+{
+    "fail": "Atención",
+    "error": "Error",
+    "success": "Correcto",
+    "server": {
+        "error": {
+            "not_identified": "Ocurrio un error desconocido al comunicarse con el servidor"
+        }
+    },
+    "validation": {
+        "fail": {
+            "verify": "No se pudo realizar la compra, puede que el stock se halla agotado"
+        }
+    },
+    "authentication": {
+        "success": {
+            "welcome": "Bienvenido {{user.username}} "
+        },
+        "fail": {
+            "token_not_found": "No te encuentras autenticado.",
+            "token_expired_or_invalid": "No te encuentras autenticado.",
+            "bad_credentials": "Los datos de acceso son incorrectos."
+        }
+    }
+}

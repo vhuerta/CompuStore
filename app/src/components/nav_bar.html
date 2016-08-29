@@ -1,0 +1,22 @@
+<template>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                  CompuStore
+              </a>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a click.delegate="stores()">Sucursales</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${currentUser} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a click.delegate="logout()">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</template>

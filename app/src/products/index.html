@@ -1,0 +1,83 @@
+<template>
+    <compose view-model="./../components/nav_bar" model.bind="$this"></compose>
+    <div class="container">
+        <h2>Productos ${storeName()}</h2>
+        <form submit.delegate="loadData()">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Filtros de busqueda
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <div class="form-group">
+                                <label class="form-label" for="key">Clave</label>
+                                <input class="form-control" type="text" name="key" value.bind="filters.key" keyup.delegate="loadData()">
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Nombre</label>
+                                <input class="form-control" type="text" name="name" value.bind="filters.name" keyup.delegate="loadData()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="pull-right">
+                        <a class="btn btn-default" type="button">Limpiar</a>
+                        <button class="btn btn-success" type="submit">Buscar</button>
+                    </div>
+                    <div class="clearfix">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Resultados
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-stripped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Clave
+                                </th>
+                                <th>
+                                    Nombre
+                                </th>
+                                <th>
+                                    Precio
+                                </th>
+                                <th>
+                                    Stock
+                                </th>
+                                <th>
+                                    Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr repeat.for="product of products">
+                                <td>${product.key}</td>
+                                <td>${product.name}</td>
+                                <td class="text-right">$${product.price}</td>
+                                <td class="text-center">${stock(product)}</td>
+                                <td class="text-center">
+                                    <a class="btn btn-primary btn-sm" hide.bind="stock(product) < 1" click.delegate="sale(product)">Comprar</a>
+                                    <a class="btn btn-info btn-sm" click.delegate="storesStock(product)">Ver stock</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <compose view-model="./_modal_stock" model.bind="$this"></compose>
+        <compose view-model="./_modal_sale" model.bind="$this"></compose>
+    </div>
+
+</template>

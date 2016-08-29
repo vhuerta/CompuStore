@@ -1,0 +1,25 @@
+<template>
+    <compose view-model="./../components/nav_bar" model.bind="$this"></compose>
+    <div class="container">
+        <section>
+            <h2>Sucursales</h2>
+            <h4>Seleccione una sucursal para comenzar a vender y buscar productos</h4>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 card-container" repeat.for="store of stores">
+                    <div class="card" click.trigger="navigate(store.id)">
+                        <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
+                        <div class="avatar">
+                            <img src="https://cdn4.iconfinder.com/data/icons/shopping-31/63/shop-512.png"/>
+                        </div>
+                        <div class="content" style="padding-bottom: 20px;">
+                            <p class="name">${store.name}</p>
+                            <a class="btn btn-info">Ingresar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</template>

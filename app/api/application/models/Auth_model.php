@@ -96,7 +96,8 @@ class Auth_Model extends CI_model {
      */
     public function find_token($token) {
         $this->db->where('token', $token);
-        return $this->db->get('tokens')->row();
+        $rs = $this->db->get('tokens')->row();
+        return $rs;
     }
 
     /**

@@ -68,6 +68,8 @@ class Custom_Controller extends REST_Controller {
      */
     private function _verify_token() {
         $token = @getallheaders()['Authorization'];
+        $token = empty($token)? @getallheaders()['authorization'] : $token;
+        $token = empty($token)? @getallheaders()['AUTHORIZATION'] : $token;
         $this->load->model('Auth_model', 'auth');
         return $this->auth->verify_token($token);
     }

@@ -44,4 +44,14 @@ class Auth extends Custom_Controller {
         $result = $this->auth->generate_token($this->current_user);
         return $this->response($result, $result->status === 'success'? 200 : 400);
     }
+
+    /**
+     * Ruta para verificar un token
+     *
+     * POST Mapea la siguiente ruta:
+     * 		http://example.com/auth/token_refresh
+     */
+    public function token_verify_get() {
+        return $this->response(array('status' => 'success', 'code' => 'authentication.success.toven_verified'), 200);
+    }
 }
