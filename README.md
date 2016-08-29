@@ -12,10 +12,13 @@ Los datos de acceso por defecto son:
 Los lugares para revisar el codigo creado por mi son los siguientes:
 
 Frontend:
+
     /app/src
     /app/locales
     /app/styles
+
 Backend:
+
     /app/api/application/models
     /app/api/application/controllers
     /app/api/application/helpers
@@ -34,6 +37,7 @@ Este es el diseño propuesto, incluye una tabla de usuarios y otra de tokens ya 
 3. Nombrar la carpeta como se quiera, nombre sugerido *compustore*.
 4. Crear las base de datos importando este *[ARCHIVO SQL](https://github.com/vhuerta/CompuStore/blob/master/sql/compustore.sql)* preferentemente sobre una BD llamada compustore, aunque esto puede ser configurado en el siguiente paso.
 5. Cambiar parametros de conexion a la Base de datos del archivo */api/application/config/database.php*.
+
     ```php
     $db['default'] = array(
     	'dsn'	=> '',
@@ -57,6 +61,7 @@ Este es el diseño propuesto, incluye una tabla de usuarios y otra de tokens ya 
     	'save_queries' => TRUE
     );
     ```
+    
 6. Hecho esto la aplicacion podra ser accedida desde *http://localhost/{carpeta}*
 
 Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la aplicación esta construida con Codeigniter y se utiliza un archivo .htaccess para hacer que las url's sean limpias, para referencia de como instalarlo ver este *[LINK](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04)*
