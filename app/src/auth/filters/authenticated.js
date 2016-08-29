@@ -1,7 +1,7 @@
 /**
  * Verifica si el usuario esta autentificado
  *
- * @author Victor Huerta <victor@blackcore.com.mx>
+ * @author Victor Huerta <vhuertahnz@gmail.com>
  */
 import { AuthService } from './../../services/auth_service';
 
