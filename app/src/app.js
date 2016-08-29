@@ -3,7 +3,11 @@ import { AuthenticatedStep } from './auth/filters/authenticated';
 import { RefreshTokenStep } from './auth/filters/refresh_token';
 import {inject} from 'aurelia-framework';
 
-@inject(AuthenticatedStep, RefreshTokenStep)
+/**
+ * Clase App, esta clase contiene las rutas de la aplicacion e indica que modulo es para cada Ruta
+ * @author Victor Huerta <vhuertahnz@gmail.com>
+ */
+@inject(AuthenticatedStep, RefreshTokenStep) // Se injectan filtros para la navegacion a rutas seguras
 export class App {
 
     constructor(authenticatedStep, refreshTokenStep) {
@@ -14,8 +18,9 @@ export class App {
     configureRouter(config, router) {
         config.title = 'CompusStore';
 
-        config.addPipelineStep('authorize', this.authenticatedStep);
-        config.addPipelineStep('authorize', this.refreshTokenStep);
+        // Filtro por los que deben pasar las rutas seguras
+        config.addPipelineStep('authorize', this.authenticatedStep); // Primero revisa que el usuario este autenticado
+        config.addPipelineStep('authorize', this.refreshTokenStep); // Despues se verifica si es necesario refrescar el token
 
         config.map([
             {route: ['', '/'], name: 'stores', moduleId: './stores/index', nav: true, title: 'Sucursales', auth: true},
