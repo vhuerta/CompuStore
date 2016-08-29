@@ -1,6 +1,13 @@
 # CompuStore
 
-La aplicación esta hecha con codeigniter para el backend y aurelia para el frontend.
+La aplicación esta hecha con [Codeigniter](https://www.codeigniter.com/) para el backend y [Aurelia](http://aurelia.io/) para el frontend.
+
+Se puede acceder a la aplicacion en la siguiente liga [http://vhuertacompustore.x10host.com/](http://vhuertacompustore.x10host.com/)
+
+Los datos de acceso por defecto son:
+
+    username: admin@test.com
+    password: admin
 
 Los lugares para revisar el codigo creado por mi son los siguientes:
 
@@ -25,7 +32,7 @@ Este es el diseño propuesto, incluye una tabla de usuarios y otra de tokens ya 
 1. Descargar el archivo zip de *[AQUI]()*.
 2. Descomprimir en el DocumentRoot del servidor web (Apache) (normalmente /var/www).
 3. Nombrar la carpeta como se quiera, nombre sugerido *compustore*.
-4. Crear las base de datos importando este *[ARCHIVO SQL]()* preferentemente sobre una BD llamada compustore, aunque esto puede ser configurado en el siguiente paso.
+4. Crear las base de datos importando este *[ARCHIVO SQL](https://github.com/vhuerta/CompuStore/blob/master/sql/compustore.sql)* preferentemente sobre una BD llamada compustore, aunque esto puede ser configurado en el siguiente paso.
 5. Cambiar parametros de conexion a la Base de datos del archivo */api/application/config/database.php*.
     ```php
     $db['default'] = array(
@@ -68,7 +75,7 @@ Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la apl
     ```
 3. Para verificar si ha funcionado se debe poder acceder a la ruta *http://localhost/compustore/api*
 
-Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la aplicación esta construida con Codeigniter y se utiliza un archivo .htaccess para hacer que las url's sean limpias, para referencia de como instalarlo ver este *[LINK](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04)*. Tambien se debe terner abilitada la opcion de FollowSymLinks en el host que se esta utilizando. La ruta sugerida para el API es *http://localhost/compustore/api* ya que el frontend trae un servidor de desarrollo el cual crea un proxy a esta ruta para poder alcanzar los endpoints. Si se desea modificar esta configuracion ver el archivo *[app/build/tasks/serve.js]()* en esta linea:
+Nota: Es necesario tener instalado el modulo mod_rewrite de Apache ya que la aplicación esta construida con Codeigniter y se utiliza un archivo .htaccess para hacer que las url's sean limpias, para referencia de como instalarlo ver este *[LINK](https://www.digitalocean.com/community/tutorials/how-to-set-up-mod_rewrite-for-apache-on-ubuntu-14-04)*. Tambien se debe terner abilitada la opcion de FollowSymLinks en el host que se esta utilizando. La ruta sugerida para el API es *http://localhost/compustore/api* ya que el frontend trae un servidor de desarrollo el cual crea un proxy a esta ruta para poder alcanzar los endpoints. Si se desea modificar esta configuracion ver el archivo *[app/build/tasks/serve.js](https://github.com/vhuerta/CompuStore/blob/master/app/build/tasks/serve.js)* en esta linea:
 
 ```javascript
 // PROXY PARA ENVIAR PETICIONES AL API QUE SE ENCUENTRA EN http://localhost:80/compustore/api
